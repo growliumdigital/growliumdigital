@@ -23,7 +23,7 @@ type CaseStudy = {
 const caseStudies: CaseStudy[] = [
     {
         id: 1,
-        title: "Transforming B2B Sales for a SaaS Company",
+        title: "Transforming B2B Sales for a SaaS  Company",
         client: "TechFlow Solutions",
         industry: "ISV & Telecom",
         challenge: "TechFlow struggled to reach decision-makers in enterprise companies, resulting in a stagnant sales pipeline and missed revenue targets.",

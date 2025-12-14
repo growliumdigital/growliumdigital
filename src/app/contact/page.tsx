@@ -167,8 +167,8 @@ export default function ContactPage() {
               </div>
               <div>
                 <h4 className="font-bold text-base mb-1">Email Us</h4>
-                <a href="mailto:info@GrowLium Digital  .com" className="text-white hover:text-blue-50 transition-colors duration-300 text-sm">
-                  info@GrowLium Digital  .com
+                <a href="mailto:growliumdigital@gmail.com" className="text-white hover:text-blue-50 transition-colors duration-300 text-sm">
+                  growliumdigital@gmail.com
                 </a>
               </div>
             </div>

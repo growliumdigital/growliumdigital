@@ -117,10 +117,10 @@ export default function RegionsWeServe() {
               <div>
                 <h4 className="font-bold text-lg mb-1">Email Us</h4>
                 <a
-                  href="mailto:info@GrowLium Digital  .com"
+                  href="mailto:growliumdigital@gmail.com"
                   className="text-white hover:text-blue-50 transition-colors duration-300 text-sm"
                 >
-                  info@GrowLium Digital  .com
+                  growliumdigital@gmail.com
                 </a>
               </div>
             </div>

@@ -194,10 +194,10 @@ export default function Footer() {
                 <div>
                   <div className="text-xs text-gray-600 mb-0.5">Email Us</div>
                   <a
-                    href="mailto:info@GrowLium Digital  .com"
+                    href="mailto:growliumdigital@gmail.com"
                     className="text-gray-700 hover:text-blue-600 transition-colors text-sm"
                   >
-                    info@GrowLium Digital  .com
+                    growliumdigital@gmail.com
                   </a>
                 </div>
               </div>
@@ -212,7 +212,7 @@ export default function Footer() {
                     href="tel:+1234567890"
                     className="text-gray-700 hover:text-blue-600 transition-colors text-sm"
                   >
-                    +1 (234) 567-890
+                    +91 99594 91517
                   </a>
                 </div>
               </div>

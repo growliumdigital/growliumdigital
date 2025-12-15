@@ -47,14 +47,14 @@ export default function Footer() {
 
       <div className="relative container mx-auto px-4 py-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Column 1: Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-2"
+            className=""
           >
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
@@ -71,8 +71,8 @@ export default function Footer() {
               We help businesses generate qualified leads by reaching key decision-makers with tailored outreach. Transform your sales pipeline with our proven strategies.
             </p>
 
-            {/* Social Media */}
-            <div className="mb-4">
+            {/* Social Media (Mobile Only) */}
+            <div className="mb-6 lg:hidden">
               <h4 className="font-semibold mb-3 text-gray-800">Connect With Us</h4>
               <div className="flex gap-2">
                 {socialLinks.map((social, index) => (
@@ -227,6 +227,25 @@ export default function Footer() {
                     Mon - Fri: 09:00 AM - 05:00 PM
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Social Media (Desktop Only) */}
+            <div className="mt-6 hidden lg:block">
+              <h4 className="font-semibold mb-3 text-gray-800">Connect With Us</h4>
+              <div className="flex gap-2">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    aria-label={social.label}
+                    whileHover={{ scale: 1.1, y: -3 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`w-10 h-10 bg-white rounded-xl flex items-center justify-center ${social.color} transition-all duration-300 shadow-md hover:shadow-lg group`}
+                  >
+                    <social.icon className="w-4 h-4 text-gray-600 group-hover:text-white transition-colors" />
+                  </motion.a>
+                ))}
               </div>
             </div>
           </motion.div>

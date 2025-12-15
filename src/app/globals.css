@@ -17,6 +17,7 @@ a {
 .btn-primary:hover {
   @apply transform translate-x-1;
 }
+
 /* services */
 .perspective-1000 {
   perspective: 1000px;
@@ -49,12 +50,14 @@ a {
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
 /* 🌟 Add this in your globals.css or tailwind.css */
 @keyframes slideUp {
   0% {
     opacity: 0;
     transform: translateY(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -65,3 +68,48 @@ a {
   animation: slideUp 0.6s ease-out forwards;
 }
 
+
+.pattern-dots {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Blog Content Custom Styles */
+.prose .advanced-tip {
+  @apply bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl my-8 relative;
+}
+
+.prose .advanced-tip::before {
+  content: "💡 Advanced Tip";
+  @apply block text-blue-600 font-bold text-sm uppercase tracking-wide mb-2;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-slate-900 pl-6 italic text-slate-700 my-8 bg-slate-50 py-4 pr-4 rounded-r-lg;
+}
+
+.prose h2 {
+  @apply text-2xl md:text-3xl font-bold text-slate-900 mt-8 mb-4 relative inline-block;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose ul {
+  @apply my-4 list-none pl-0;
+}
+
+.prose li {
+  @apply relative pl-6 mb-2 text-slate-700 transition-all duration-200 hover:text-blue-700 hover:translate-x-1;
+}
+
+.prose li::before {
+  content: "→";
+  @apply absolute left-0 text-blue-500 font-bold;
+}
+
+.content-image {
+  @apply w-full md:w-1/2 mr-auto h-auto rounded-2xl shadow-lg my-8 transform transition-all duration-500 hover:scale-[1.02] block;
+  animation: slideUp 0.8s ease-out forwards;
+}

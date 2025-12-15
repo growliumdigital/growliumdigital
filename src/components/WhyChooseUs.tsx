@@ -72,8 +72,8 @@ export default function WhyChooseUs() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl h-full group">
               <Image
-                src="/images/YourTrusted.jpg"
-                alt="5-Step Growth Process"
+                src="/images/growth_partner_b2b.png"
+                alt="Your Trusted Growth Partner in B2B Lead Generation"
                 width={600}
                 height={500}
                 className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"

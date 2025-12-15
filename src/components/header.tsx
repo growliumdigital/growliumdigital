@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { span } from "framer-motion/client";
 
 export default function Header() {
   const pathname = usePathname() || "/";
@@ -80,7 +81,7 @@ export default function Header() {
           </Link>
 
           {/* Dropdown: Services */}
-          <div className="relative group">
+          <div className="relative flex items-center gap-1">
             <Link
               href="/services"
               className={`${isActive("/services")
@@ -89,21 +90,24 @@ export default function Header() {
                 } flex items-center gap-1`}
             >
               <span>Services</span>
-              <ChevronDown size={16} className="mt-[4px]" />
             </Link>
-            <div className="absolute z-50 left-0 mt-2 w-48 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-              {SERVICES_OPTIONS?.map((service) => (
-                <Link
-                  key={service.id}
-                  href={`/services/${service.id}`}
-                  className={`block px-4 py-2 text-sm ${isActive(`/services/${service.id}`)
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-blue-600"
-                    }`}
-                >
-                  {service.label}
-                </Link>
-              ))}
+            <div className="relative group">
+              <ChevronDown size={16} className=" mt-[4px] peer cursor-pointer text-gray-700 hover:text-blue-600" />
+
+              <div className="absolute z-50 left-0 mt-2 w-48 bg-white border rounded shadow-lg opacity-0 peer-hover:opacity-100 transition-opacity">
+                {SERVICES_OPTIONS?.map((service) => (
+                  <Link
+                    key={service.id}
+                    href={`/services/${service.id}`}
+                    className={`block px-4 py-2 text-sm ${isActive(`/services/${service.id}`)
+                      ? "text-blue-600"
+                      : "text-gray-700 hover:text-blue-600"
+                      }`}
+                  >
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 

@@ -59,7 +59,6 @@ export default function HeroSection() {
   }, []);
 
   const stats = [
-    { label: "Years of Experience", value: counts.years, suffix: "+" },
     { label: "Results-Driven Campaigns", value: counts.campaigns, suffix: "+" },
     { label: "High-Quality Data", value: counts.quality, suffix: "%" },
     { label: "Lead Conversion Rate", value: counts.conversion, suffix: "%" },
@@ -98,7 +97,7 @@ export default function HeroSection() {
       {/* Modern Stats Bar - Positioned Below Content */}
       <div className="mt-auto pb-2">
         <div className="bg-white/5 backdrop-blur-md rounded-2xl shadow-xl p-3 md:p-4 mx-auto max-w-6xl border border-white/20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
             {stats.map((stat, i) => (
               <div
                 key={i}

@@ -194,10 +194,10 @@ export default function Footer() {
                 <div>
                   <div className="text-xs text-gray-600 mb-0.5">Email Us</div>
                   <a
-                    href="mailto:growliumdigital@gmail.com"
-                    className="text-gray-700 hover:text-blue-600 transition-colors text-sm"
+                    href="mailto:vamsi.krishna@growliumdigital.com"
+                    className="text-white hover:text-blue-600 transition-colors text-sm"
                   >
-                    growliumdigital@gmail.com
+                    vamsi.krishna@growliumdigital.com
                   </a>
                 </div>
               </div>

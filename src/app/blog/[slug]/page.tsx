@@ -6,7 +6,7 @@ import { getBlogPost, getRelatedPosts } from "@/lib/blog";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Calendar, Clock, User, ArrowLeft, Share2, Linkedin, Twitter, Facebook, ArrowRight } from "lucide-react";
+import { Calendar, Clock, User, ArrowLeft, ArrowRight } from "lucide-react";
 
 interface BlogPostPageProps {
     readonly params: Promise<{ slug: string }>;
@@ -27,7 +27,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             {/* Scroll Progress Bar (Optional - can be added later) */}
 
             {/* --- Hero Section --- */}
-            <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden">
                 {/* Background Image with Parallax-like effect */}
                 <div className="absolute inset-0 z-0">
                     <Image
@@ -44,7 +44,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        transition={{ duration: 0.8, ease: "easeOut", staggerChildren: 0.2 }}
                         className="max-w-4xl mr-auto text-left"
                     >
                         <Link
@@ -55,8 +55,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                             Back to Blog
                         </Link>
 
-                        <div className="flex items-center justify-start gap-4 text-sm font-medium text-blue-200 mb-6">
-                            <span className="bg-blue-600/20 border border-blue-500/30 px-3 py-1 rounded-full backdrop-blur-sm text-blue-100">
+                        <motion.div
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="flex items-center justify-start gap-4 text-sm font-medium text-blue-200 mb-6"
+                        >
+                            <span className="bg-blue-600/20 border border-blue-500/30 px-3 py-1 rounded-full backdrop-blur-sm text-blue-100 hover:bg-blue-600/30 transition-colors cursor-default">
                                 {post.category}
                             </span>
                             <span className="flex items-center gap-1">
@@ -65,21 +70,31 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                             <span className="flex items-center gap-1">
                                 <Clock className="w-4 h-4" /> {post.readTime}
                             </span>
-                        </div>
+                        </motion.div>
 
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight tracking-tight">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3, duration: 0.8 }}
+                            className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-300"
+                        >
                             {post.title}
-                        </h1>
+                        </motion.h1>
 
-                        <div className="flex items-center justify-start gap-3">
-                            <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.5 }}
+                            className="flex items-center justify-start gap-3"
+                        >
+                            <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-blue-900/20">
                                 {post.author.charAt(3)} {/* Simple avatar fallback */}
                             </div>
                             <div className="text-left">
                                 <p className="text-white font-medium">{post.author}</p>
                                 <p className="text-slate-400 text-xs">Content Team</p>
                             </div>
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </section>
@@ -89,27 +104,15 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto">
                         <div className="flex flex-col lg:flex-row gap-12">
-                            {/* Sidebar (Share) */}
-                            <aside className="hidden lg:flex flex-col gap-6 sticky top-32 h-fit w-16 items-center">
-                                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider rotate-180" style={{ writingMode: 'vertical-rl' }}>Share this</span>
-                                <div className="flex flex-col gap-4">
-                                    <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-blue-50 text-slate-600 hover:text-blue-600 flex items-center justify-center transition-colors">
-                                        <Linkedin className="w-5 h-5" />
-                                    </button>
-                                    <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-blue-50 text-slate-600 hover:text-blue-600 flex items-center justify-center transition-colors">
-                                        <Twitter className="w-5 h-5" />
-                                    </button>
-                                    <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-blue-50 text-slate-600 hover:text-blue-600 flex items-center justify-center transition-colors">
-                                        <Facebook className="w-5 h-5" />
-                                    </button>
-                                    <button className="w-10 h-10 rounded-full bg-slate-100 hover:bg-blue-50 text-slate-600 hover:text-blue-600 flex items-center justify-center transition-colors">
-                                        <Share2 className="w-5 h-5" />
-                                    </button>
-                                </div>
-                            </aside>
 
                             {/* Article Body */}
-                            <article className="flex-1">
+                            <motion.article
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.6 }}
+                                className="flex-1"
+                            >
                                 <p className="text-xl md:text-2xl text-slate-600 leading-relaxed mb-10 font-medium border-l-4 border-blue-500 pl-6 italic">
                                     {post.excerpt}
                                 </p>
@@ -119,16 +122,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                                     dangerouslySetInnerHTML={{ __html: post.content }}
                                 />
 
-                                {/* Mobile Share (Bottom) */}
-                                <div className="lg:hidden mt-12 pt-8 border-t border-slate-100">
-                                    <p className="text-sm font-bold text-slate-900 mb-4">Share this article</p>
-                                    <div className="flex gap-4">
-                                        <button className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center"><Linkedin className="w-5 h-5" /></button>
-                                        <button className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center"><Twitter className="w-5 h-5" /></button>
-                                        <button className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center"><Facebook className="w-5 h-5" /></button>
-                                    </div>
-                                </div>
-                            </article>
+                            </motion.article>
                         </div>
                     </div>
                 </div>

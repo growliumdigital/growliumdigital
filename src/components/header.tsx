@@ -81,7 +81,7 @@ export default function Header() {
           </Link>
 
           {/* Dropdown: Services */}
-          <div className="relative flex items-center gap-1">
+          <div className="relative group">
             <Link
               href="/services"
               className={`${isActive("/services")
@@ -90,11 +90,10 @@ export default function Header() {
                 } flex items-center gap-1`}
             >
               <span>Services</span>
+              <ChevronDown size={16} className="mt-[4px]" />
             </Link>
-            <div className="relative group">
-              <ChevronDown size={16} className=" mt-[4px] peer cursor-pointer text-gray-700 hover:text-blue-600" />
-
-              <div className="absolute z-50 left-0 mt-2 w-48 bg-white border rounded shadow-lg opacity-0 peer-hover:opacity-100 transition-opacity">
+            <div className="absolute z-50 left-0 pt-2 w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto">
+              <div className="bg-white border rounded shadow-lg">
                 {SERVICES_OPTIONS?.map((service) => (
                   <Link
                     key={service.id}
@@ -121,19 +120,21 @@ export default function Header() {
               <span> Engagement Types</span>
               <ChevronDown size={16} className="mt-[4px]" />
             </button>
-            <div className="absolute z-50 left-0 mt-2 w-56 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-              <Link
-                href="/engagement/full-time-resource"
-                className="block px-4 py-2 hover:bg-gray-100"
-              >
-                Full Time Resource Deployment
-              </Link>
-              <Link
-                href="/engagement/performance-based"
-                className="block px-4 py-2 hover:bg-gray-100"
-              >
-                Performance Based Model
-              </Link>
+            <div className="absolute z-50 left-0 pt-2 w-56 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto">
+              <div className="bg-white border rounded shadow-lg">
+                <Link
+                  href="/engagement/full-time-resource"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  Full Time Resource Deployment
+                </Link>
+                <Link
+                  href="/engagement/performance-based"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  Performance Based Model
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -147,19 +148,21 @@ export default function Header() {
               <span>Insights</span>
               <ChevronDown size={16} className="mt-[4px]" />
             </button>
-            <div className="absolute z-50 left-0 mt-2 w-48 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-              <Link
-                href="/faqs"
-                className="block px-4 py-2 hover:bg-gray-100"
-              >
-                General FAQs
-              </Link>
-              <Link
-                href="/case-studies"
-                className="block px-4 py-2 hover:bg-gray-100"
-              >
-                Case Studies
-              </Link>
+            <div className="absolute z-50 left-0 pt-2 w-48 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto">
+              <div className="bg-white border rounded shadow-lg">
+                <Link
+                  href="/faqs"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  General FAQs
+                </Link>
+                <Link
+                  href="/case-studies"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                >
+                  Case Studies
+                </Link>
+              </div>
             </div>
           </div>
 

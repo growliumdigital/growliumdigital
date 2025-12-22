@@ -115,12 +115,12 @@ export default function RegionsWeServe() {
                 <Mail className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h4 className="font-bold text-lg mb-1">Email Us</h4>
+                <h4 className="font-bold text-lg mb-1 text-white">Email Us</h4>
                 <a
-                  href="mailto:growliumdigital@gmail.com"
+                  href="mailto:vamsi.krishna@growliumdigital.com"
                   className="text-white hover:text-blue-50 transition-colors duration-300 text-sm"
                 >
-                  growliumdigital@gmail.com
+                  vamsi.krishna@growliumdigital.com
                 </a>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function RegionsWeServe() {
                 <Clock className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h4 className="font-bold text-lg mb-1">Business Hours</h4>
+                <h4 className="font-bold text-lg mb-1 text-white">Business Hours</h4>
                 <p className="text-blue-100 text-sm">
                   Monday to Friday<br />
                   09:00 AM – 05:00 PM

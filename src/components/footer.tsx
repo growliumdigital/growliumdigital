@@ -4,6 +4,7 @@ import { FaTwitter, FaInstagram, FaLinkedin, FaFacebook, FaYoutube } from "react
 import { Mail, Phone, MapPin, ArrowRight, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import FooterStats from "./FooterStats";
 
 export default function Footer() {
   const socialLinks = [
@@ -46,6 +47,9 @@ export default function Footer() {
       </div>
 
       <div className="relative container mx-auto px-4 py-12">
+        {/* Stats Bar moved from Hero */}
+        <FooterStats />
+
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Column 1: Brand */}
